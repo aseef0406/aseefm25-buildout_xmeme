@@ -27,10 +27,10 @@ public class AseefCrioMemeBackendApplication {
     private int serverPort;
 
     @Bean
-    public Docket docket() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .host("localhost:" + serverPort);
-    }
+   public Docket productApi() {
+      return new Docket(DocumentationType.SWAGGER_2).select()
+         .apis(RequestHandlerSelectors.basePackage("com.aseef.meme.aseefcriomemebackend")).build();
+   }
 	public static void main(String[] args) {
 		SpringApplication.run(AseefCrioMemeBackendApplication.class, args);
 	}
