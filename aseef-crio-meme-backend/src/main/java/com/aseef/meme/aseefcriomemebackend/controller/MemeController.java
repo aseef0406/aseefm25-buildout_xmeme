@@ -70,13 +70,4 @@ public class MemeController {
 	public long getLatestId() {
 		return myservice.getLatestid();
 	}
-	
-	
-	@RequestMapping(
-            value = "/**",
-            method = RequestMethod.OPTIONS
-    )
-    public ResponseEntity handle() {
-        return new ResponseEntity(HttpStatus.OK);
-    }
 }
